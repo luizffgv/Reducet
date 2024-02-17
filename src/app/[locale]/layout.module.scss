@@ -1,0 +1,18 @@
+@use "@/sass/between" as *;
+
+.body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  box-sizing: border-box;
+  margin: 32px 0;
+  padding: 0 8px;
+  width: clamp-between(768px, 1080px, 768px, 1620px);
+
+  @media screen and (width < 768px) {
+    width: 100%;
+  }
+}

@@ -1,0 +1,97 @@
+@use "@/sass/between" as *;
+@use "@/sass/variables" as *;
+@use "@/sass/mixins" as *;
+
+.container {
+  .cover {
+    width: 100%;
+  }
+
+  .content {
+    padding: 0 clamp-between(8px, 32px, 280px, 512px);
+
+    :not(pre) > code {
+      background-color: $color-inline-code-background;
+      border-radius: $border-radius;
+      box-shadow: $shadow-1;
+      color: $color-inline-code-foreground;
+      font-family: $font-code;
+      font-size: $inline-code-font-size;
+      padding: 0 0.75ch;
+      white-space: nowrap;
+    }
+
+    li {
+      list-style-position: inside;
+
+      // Otherwise some lists don't display as intended, such as
+      p {
+        &:first-child {
+          display: inline;
+        }
+
+        &:not(:first-child) {
+          margin-left: 23px;
+        }
+
+        &:nth-child(2) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    p {
+      line-height: 1.5;
+      margin-block: 1em;
+    }
+
+    pre:has(code) {
+      border-radius: $border-radius;
+      box-shadow: $shadow-1;
+
+      code span {
+        font-family: $font-code;
+      }
+    }
+
+    table {
+      background-color: $color-background-close;
+      border-collapse: collapse;
+
+      thead {
+        th {
+          border-bottom: 1px solid $color-table-border;
+          padding: 8px 1ch;
+        }
+      }
+
+      td {
+        padding: 8px 1ch;
+
+        &:first-child {
+          padding-left: 13px;
+        }
+
+        &:last-child {
+          padding-right: 13px;
+        }
+      }
+
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: $color-table-background-alternate;
+          }
+        }
+      }
+    }
+
+    .content__table-container {
+      @include card(1);
+
+      margin: 24px auto;
+      max-width: fit-content;
+      overflow-x: auto;
+    }
+  }
+}

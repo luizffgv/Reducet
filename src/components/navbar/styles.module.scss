@@ -1,0 +1,96 @@
+@use "@/sass/mixins" as *;
+@use "@/sass/variables" as *;
+
+.skip {
+  background-color: $color-background-close;
+  left: 16px;
+  position: fixed;
+  top: 16px;
+  z-index: 2;
+
+  &:not(:focus) {
+    @include sr-only;
+  }
+}
+
+.container {
+  font-size: initial;
+  height: $navbar-height;
+  width: 100%;
+  z-index: 1;
+
+  .navbar {
+    background-color: $color-background-close;
+    box-shadow: $shadow-3;
+    box-sizing: border-box;
+    display: flex;
+    height: $navbar-height;
+    padding: 0 16px;
+    position: fixed;
+    width: 100%;
+
+    .name {
+      @include font-title;
+
+      font-size: 24px;
+    }
+
+    .left {
+      align-items: center;
+      display: flex;
+      flex-grow: 1;
+      gap: 32px;
+      overflow: hidden;
+
+      .links {
+        display: flex;
+        flex-grow: 1;
+        gap: 24px;
+        overflow: hidden;
+        position: relative;
+
+        :has(button[aria-expanded="true"]) & {
+          align-items: center;
+          background-color: $color-background-close;
+          bottom: 0;
+          display: flex;
+          flex-direction: column;
+          font-size: 1.5em;
+          gap: 1em;
+          height: calc(100vh - $navbar-height);
+          left: 0;
+          overflow-y: auto;
+          position: absolute;
+          translate: 0 100%;
+          width: 100%;
+          justify-content: safe center;
+        }
+
+        :has(button[aria-expanded="false"]) &::after {
+          background: linear-gradient(
+            to right,
+            transparent,
+            $color-background-close
+          );
+          content: "";
+          height: 100%;
+          pointer-events: none;
+          position: absolute;
+          right: 0;
+          width: 64px;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+      }
+    }
+
+    .hamburger {
+      margin-left: auto;
+      user-select: none;
+      color: inherit;
+    }
+  }
+}

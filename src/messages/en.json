@@ -1,0 +1,26 @@
+{
+  "Home": {
+    "title": "Home",
+    "recent": "Recent posts"
+  },
+  "Categories": {
+    "title": "Categories",
+    "category-selector": "Category selector",
+    "select-prompt": "Select a category above"
+  },
+  "About": {
+    "title": "About",
+    "content": "{blogName} is a little blog made by [luizffgv](https://github.com/luizffgv) using Next.js and Strapi. It's my first Next.js/Strapi project, so don't expect too much.\n\nHere I'll post basically anything I find interesing related to programming."
+  },
+  "Navbar": {
+    "home": "Home",
+    "categories": "Categories",
+    "about": "About",
+    "skip-link": "Skip to main content",
+    "toggle-fullscreen-navbar": "Toggle fullscreen navigation bar"
+  },
+  "PostPreview": {
+    "categories-list-label": "Categories",
+    "date": "On {date}"
+  }
+}

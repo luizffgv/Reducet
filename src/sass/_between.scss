@@ -1,0 +1,14 @@
+// Interpolates from $from to $to as the viewport width goes from $fromWidth to
+// $toWidth. Does not clamp the value inside the range.
+@function between($from, $to, $fromWidth, $toWidth) {
+  $slope: ($to - $from) / ($toWidth - $fromWidth);
+  $base: $from - $slope * $fromWidth;
+
+  @return calc($base + 100vw * $slope);
+}
+
+// Interpolates from $from to $to as the viewport width goes from $fromWidth to
+// $toWidth. Clamps the value inside the range.
+@function clamp-between($from, $to, $fromWidth, $toWidth) {
+  @return clamp($from, between($from, $to, $fromWidth, $toWidth), $to);
+}

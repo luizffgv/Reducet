@@ -1,0 +1,28 @@
+@use "sass:color";
+
+$font: var(--font-atkinson);
+$font-title: var(--font-atkinson);
+$font-code: var(--font-source-code-pro);
+
+$color-background: #1a171c;
+$color-background-close: #26232b;
+$color-foreground: #f4f4f4;
+$color-anchor: #00b3ff;
+$color-anchor-visited: #9900ff;
+$color-inline-code-background: $color-background-close;
+$color-inline-code-foreground: $color-foreground;
+$color-table-background-alternate: color.scale(
+  $color-background-close,
+  $lightness: -20%
+);
+$color-table-border: $color-table-background-alternate;
+
+$border-radius: 4px;
+
+$shadow-1: 0 2px 4px rgb(0 0 0 / 0.1);
+$shadow-2: 0 4px 12px rgb(0 0 0 / 0.1);
+$shadow-3: 0 6px 20px rgb(0 0 0 / 0.1);
+
+$navbar-height: 48px;
+
+$inline-code-font-size: 0.8em;

@@ -1,0 +1,21 @@
+@use "@/sass/mixins" as *;
+
+.tag {
+  @include card(1);
+
+  color: inherit;
+  padding: 8px 16px;
+  text-decoration: none;
+
+  &:not(:has(input:checked)) {
+    opacity: 0.5;
+  }
+
+  label {
+    cursor: inherit;
+
+    input {
+      appearance: none;
+    }
+  }
+}
